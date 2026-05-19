@@ -2,7 +2,7 @@
 
 ## System Overview
 
-This Real-time distributed task orchestration engine is designed to process 2,500 concurrent financial transaction jobs, each consisting of three sequential tasks: Validation → Ledger Update → Notification.
+This Real-time distributed task orchestration engine is designed to process 2,500 concurrent financial transaction jobs, each consisting of three sequential tasks: **Validation → Ledger Update → Notification**
 
 ---
 
