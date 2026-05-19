@@ -128,7 +128,7 @@ All logs are emitted as single-line JSON with consistent fields:
 - `logger` — module path
 - `message` — human-readable with job_id and task_type context
 
-This format is directly ingestible by Datadog, CloudWatch, Grafana Loki, and ELK Stack.
+This format is directly ingestible by Datadog, CloudWatch, Grafana Loki and ELK Stack.
 
 ### Health Endpoint
 `GET /health` verifies Redis connectivity in addition to app health — suitable for Docker healthchecks and load balancer probes.
