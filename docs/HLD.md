@@ -7,7 +7,7 @@ This Real-time distributed task orchestration engine is designed to process 2,50
 ---
 
 ## Architecture Diagram
-![HLD](HLD.jpg)
+![HLD](docs/images/HLD.jpg)
 
 ---
 
