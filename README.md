@@ -152,6 +152,7 @@ Tasks failing more than 3 times are moved to the `tasks_dlq` Redis Stream and th
 ---
 
 ## Project Structure
+```
 rt-dto/
 ├── app/
 │   ├── main.py              # FastAPI entrypoint + lifespan
@@ -179,6 +180,7 @@ rt-dto/
 ├── docker-compose.yml
 ├── Dockerfile
 └── docs/HLD.md
+```
 
 ---
 
