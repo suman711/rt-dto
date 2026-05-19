@@ -125,7 +125,9 @@ curl http://localhost:8000/jobs/{job_id}
 
 ## Task Lifecycle
 SCHEDULED → RUNNING → COMPLETED
+
 ↘ FAILED (retry with exponential backoff)
+
 ↘ DEAD (after 3 failures → DLQ)
 
 ### Timeout
