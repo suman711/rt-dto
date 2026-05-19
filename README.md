@@ -2,11 +2,6 @@
 
 This is a high-performance **task orchestration engine** for processing financial transactions through sequential, fault-tolerant pipelines. Built as part of a backend engineering challenge demonstrating distributed systems design, async Python and production-ready observability.
 
-"Why Redis Streams over Kafka?" → Operational simplicity, native consumer groups, XAUTOCLAIM for dead worker recovery, all in one service.
-
-Broker Choice — Why Redis Streams:
-Explain that Kafka adds operational overhead inappropriate for a prototype, RabbitMQ lacks native stream replay, but Redis Streams gives consumer groups, message persistence (appendonly yes), and XAUTOCLAIM for dead-worker recovery — all in one lightweight service already needed for caching.
-
 ---
 
 ## Architecture Overview
@@ -59,7 +54,7 @@ if task.status in (TaskStatus.COMPLETED, TaskStatus.DEAD):
 
 ---
 
-## Delivery Guarantee
+## Guaranteed Delivery
 
 This system implements **at-least-once delivery with idempotency guards** — the industry-standard tradeoff.
 
