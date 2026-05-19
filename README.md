@@ -43,11 +43,13 @@ Tasks are distributed across a worker pool via Redis Streams. PostgreSQL tracks 
 
 ---
 
-## Race Condition Strategy
+## Race Condition Handling Strategy
 
-`XREADGROUP` is atomic at the Redis level — only one consumer in a group ever receives a given message. This eliminates the classic "two workers pick up the same task" race condition.
+The `XREADGROUP` command is atomic at the Redis level — guarantees only one consumer in a group receives any given message. This eliminates the classic "two workers pick up the same task" race condition.
 
-For the rare case of duplicate delivery (network partition causing redelivery after a worker already committed), every task processor begins with an **idempotency guard**:
+The Pending Entries List (PEL) tracks unacknowledged messages. Combined with the DB-first status check, the system is safe against duplicate processing even if a message is re-delivered.
+
+For the case of duplicate delivery (network partition causing redelivery after a worker already committed), every task processor begins with an **idempotency guard**:
 
 ```python
 if task.status in (TaskStatus.COMPLETED, TaskStatus.DEAD):
