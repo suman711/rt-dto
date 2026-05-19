@@ -63,7 +63,7 @@ This Real-time distributed task orchestration engine is designed to process 2,50
 - On failure: increment retry_count → re-enqueue with backoff OR promote to DLQ
 - On startup: run `XAUTOCLAIM` periodically to recover orphaned tasks
 
-### PostgreSQL (State Store)
+### State Store (PostgreSQL)
 - Single source of truth for all job and task states
 - Tracks per-task timestamps: `scheduled_at`, `started_at`, `completed_at`
 - Enables per-task latency calculation: `duration_seconds`
