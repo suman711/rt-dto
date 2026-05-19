@@ -100,6 +100,8 @@ pytest tests/ -v
 
 Open your browser and go to **http://localhost:8000/docs** — you'll see the full interactive Swagger UI for the API when running.
 
+![SwaggerUI](docs/images/SwaggerUI.png)
+
 ### Submit a job
 
 ```bash
