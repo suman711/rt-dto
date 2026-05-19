@@ -136,8 +136,8 @@ Tasks exceeding 30 seconds are killed via `asyncio.wait_for` and marked `FAILED`
 ### Retry
 Failed tasks are re-enqueued with exponential backoff: 2s → 4s → 8s.
 
-### Dead Letter Queue
-Tasks failing 3+ times are moved to the `tasks_dlq` Redis Stream and the parent job is marked `FAILED`. DLQ entries are logged for manual inspection and can be replayed via `replay_dlq_task()`.
+### Dead Letter Queue (DLQ)
+Tasks failing more than 3 times are moved to the `tasks_dlq` Redis Stream and the parent job is marked `FAILED`. DLQ entries are logged for manual inspection and can be replayed via `replay_dlq_task()`.
 
 ---
 
