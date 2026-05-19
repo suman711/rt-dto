@@ -1,8 +1,6 @@
 # Real-Time Distributed Task Orchestrator (RT-DTO)
 
-A high-performance task orchestration engine for processing financial transactions through sequential, fault-tolerant pipelines.
-
-Built as a backend engineering challenge demonstrating distributed systems design, async Python, and production-ready observability.
+This is a high-performance **task orchestration engine** for processing financial transactions through sequential, fault-tolerant pipelines. Built as part of a backend engineering challenge demonstrating distributed systems design, async Python and production-ready observability.
 
 ---
 
