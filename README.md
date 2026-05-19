@@ -26,7 +26,7 @@ Tasks are distributed across a worker pool via Redis Streams. PostgreSQL tracks 
 | Workers | asyncio + ThreadPoolExecutor | CPU tasks in threads, I/O tasks async |
 | Containers | Docker Compose | Reproducible environment |
 
-**Note:** The package pydantic-core might not yet have pre-built wheels for the latest version of Python and need Microsoft C++ Build Tools to compile from source. So its recommeded to run the service in Python 3.11 or Python 3.12 versioned environment on Windows.
+**Note:** The package `pydantic-core` might not yet have pre-built wheels for the latest version of Python and need Microsoft C++ Build Tools to compile from source. So its recommeded to run the service in Python 3.11 or Python 3.12 versioned environment on Windows.
 
 ---
 
