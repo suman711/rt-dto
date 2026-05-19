@@ -1,6 +1,6 @@
 # Real-Time Distributed Task Orchestrator (RT-DTO)
 
-A high-performance **task orchestration engine** for processing financial transactions through sequential, fault-tolerant pipelines. This system is responsible for receiving complex, multi-step job definitions from clients, scheduling individual tasks across a pool of workers and managing the lifecycle of these jobs in a distributed environment.
+A high-performance **task orchestration engine** for processing financial transactions through sequential, fault-tolerant pipelines. This service is responsible for receiving complex, multi-step job definitions from clients, scheduling individual tasks across a pool of workers and managing the lifecycle of these jobs in a distributed environment.
 
 ---
 
@@ -25,6 +25,8 @@ Tasks are distributed across a worker pool via Redis Streams. PostgreSQL tracks 
 | DB Driver | psycopg3 | Pre-built wheels, async-native |
 | Workers | asyncio + ThreadPoolExecutor | CPU tasks in threads, I/O tasks async |
 | Containers | Docker Compose | Reproducible environment |
+
+**Note:** The package pydantic-core might not yet have pre-built wheels for the latest version of Python and need Microsoft C++ Build Tools to compile from source. So its recommeded to run the service in Python 3.11 or Python 3.12 versioned environment on Windows.
 
 ---
 
