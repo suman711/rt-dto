@@ -7,6 +7,7 @@ This Real-time distributed task orchestration engine is designed to process 2,50
 ---
 
 ## Architecture Diagram
+```
 ┌─────────────────────────────────────────────────────────────┐
 │                        CLIENT                               │
 │              POST /jobs  |  GET /jobs/{id}                  │
@@ -36,6 +37,7 @@ This Real-time distributed task orchestration engine is designed to process 2,50
 │   PostgreSQL    │  ← State Store
 │  jobs + tasks   │    ACID transactions
 └─────────────────┘
+```
 
 ---
 
