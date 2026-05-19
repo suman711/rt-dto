@@ -1,4 +1,4 @@
-# Real-Time Distributed Task Orchestrato (RT-DTO)
+# Real-Time Distributed Task Orchestrator (RT-DTO)
 
 A high-performance task orchestration engine for processing financial transactions through sequential, fault-tolerant pipelines.
 
