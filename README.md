@@ -7,6 +7,7 @@ This is a high-performance **task orchestration engine** for processing financia
 ## Architecture Overview
 
 Each submitted job is decomposed into three sequential tasks:
+
 VALIDATION (CPU) → LEDGER_UPDATE (I/O) → NOTIFICATION (External API)
 
 Tasks are distributed across a worker pool via Redis Streams. PostgreSQL tracks all state transitions. Workers chain tasks automatically — Task B only starts after Task A succeeds.
