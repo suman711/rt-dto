@@ -18,8 +18,8 @@ Tasks are distributed across a worker pool via Redis Streams. PostgreSQL tracks 
 
 | Component | Choice | Reason |
 |---|---|---|
-| API | FastAPI | Async-native, auto Swagger docs |
-| Message Broker | Redis Streams | Consumer groups, persistence, XAUTOCLAIM for dead worker recovery |
+| API | FastAPI | Async-native, Auto Swagger docs, Production standard |
+| Message Broker | Redis Streams | Lightweight, Persistent, XAUTOCLAIM for dead worker recovery, Built-in consumer groups — perfect for this scale |
 | Database | PostgreSQL | ACID guarantees for state transitions |
 | ORM | SQLAlchemy 2.0 | Async support, type-safe queries |
 | DB Driver | psycopg3 | Pre-built wheels, async-native |
