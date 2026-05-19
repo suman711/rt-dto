@@ -1,8 +1,8 @@
-# High-Level Design — RT-DTO
+# High-Level Design (HLD)
 
 ## System Overview
 
-RT-DTO is a distributed task orchestration engine designed to process 2,500 concurrent financial transaction jobs, each consisting of three sequential tasks: Validation → Ledger Update → Notification.
+This Real-time distributed task orchestration engine is designed to process 2,500 concurrent financial transaction jobs, each consisting of three sequential tasks: Validation → Ledger Update → Notification.
 
 ---
 
@@ -48,11 +48,11 @@ RT-DTO is a distributed task orchestration engine designed to process 2,500 conc
 - Returns 202 Accepted immediately (non-blocking)
 - Serves status queries via `GET /jobs/{job_id}`
 
-### Redis Streams (Message Broker)
+### Message Broker (Redis Streams)
 - `tasks_stream` — main task queue
 - `tasks_dlq` — dead letter queue for permanently failed tasks
 - Consumer group `workers` ensures each message is delivered to exactly one worker
-- PEL (Pending Entries List) tracks unacknowledged messages
+- Pending Entries List (PEL) tracks unacknowledged messages
 - `XAUTOCLAIM` reclaims messages from crashed workers after 60s
 
 ### Workers
