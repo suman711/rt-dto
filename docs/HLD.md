@@ -7,37 +7,7 @@ This Real-time distributed task orchestration engine is designed to process 2,50
 ---
 
 ## Architecture Diagram
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        CLIENT                               │
-│              POST /jobs  |  GET /jobs/{id}                  │
-└──────────────────────┬──────────────────────────────────────┘
-│
-┌────────▼────────┐
-│  FastAPI API    │  ← Dispatcher
-│  (port 8000)    │    Creates Job + 3 Tasks
-└────────┬────────┘    Enqueues Task[0] only
-│
-┌────────▼────────┐
-│  Redis Streams  │  ← Message Broker
-│  tasks_stream   │    Consumer Group: workers
-│  tasks_dlq      │    XREADGROUP / XAUTOCLAIM
-└────────┬────────┘
-│
-┌──────────────┼──────────────┐
-│              │              │
-┌─────▼─────┐  ┌─────▼─────┐  ┌───▼──────┐
-│ Worker 1  │  │ Worker 2  │  │ Worker N │  ← Horizontally scalable
-│ asyncio   │  │ asyncio   │  │ asyncio  │
-└─────┬─────┘  └─────┬─────┘  └───┬──────┘
-│              │             │
-└──────────────▼─────────────┘
-│
-┌────────▼────────┐
-│   PostgreSQL    │  ← State Store
-│  jobs + tasks   │    ACID transactions
-└─────────────────┘
-```
+![HLD](HLD.jpg)
 
 ---
 
