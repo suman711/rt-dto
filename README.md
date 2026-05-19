@@ -186,7 +186,7 @@ rt-dto/
 
 ## Observable Output
 
-Every task emits structured JSON logs with timestamp, level, job_id, task type, and duration:
+Every task emits structured JSON logs with timestamp, level, job_id, task type and duration:
 
 ```json
 {"timestamp": "2026-05-18T10:41:31.344731+00:00", "level": "INFO",
