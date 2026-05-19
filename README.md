@@ -98,7 +98,7 @@ pytest tests/ -v
 | `GET` | `/jobs/{job_id}` | Poll job + task status |
 | `GET` | `/jobs/{job_id}/tasks` | List all tasks for a job |
 
-Interactive docs available at **http://localhost:8000/docs** when running.
+Open your browser and go to **http://localhost:8000/docs** — you'll see the full interactive Swagger UI for the API when running.
 
 ### Submit a job
 
